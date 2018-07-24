@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.csc.model.User" table="user">
+		<id name="userid" type="int">
+			<column name="userid" />
+			<generator class="increment" />
+		</id>
+		<property name="fullname" type="string">
+			<column name="fullname" />
+		</property>
+		<property name="sex" type="string">
+			<column name="sex" />
+		</property>
+		<property name="address" type="string">
+			<column name="address" />
+		</property>
+		<property name="dateofbirth" type="date">
+			<column name="dateofbirth" />
+		</property>
+		<property name="placeofbirth" type="string">
+			<column name="placeofbirth" />
+		</property>
+		<property name="roleid" type="int">
+			<column name="roleid" />
+		</property>
+		<property name="username" type="string">
+			<column name="username" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" />
+		</property>
+	</class>
+</hibernate-mapping>
