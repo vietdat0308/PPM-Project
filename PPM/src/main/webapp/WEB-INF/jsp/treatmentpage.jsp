@@ -232,13 +232,13 @@
 					<td>User id:</td>
 					<td><form:input path="user.userid"  id="userid" name="userid" required="required"/></td>
 				</tr>
-				<tr>
+<%-- 				<tr>
 					<td>medicine id:</td>
 					<td><form:select  path="medicines">
     					<form:option value="NONE"> --SELECT--</form:option>
-    					<form:options items="${medicines.medicineid}"></form:options>
+    					<form:options items="${medicines}"></form:options>
     				</form:select></td>
-				</tr> 
+				</tr>  --%>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
 						value="Register" /></td>
@@ -267,6 +267,7 @@
 				<th>medicaltestresult</th>
 				<th>patientid</th>
 				<th>doctorid</th>
+				<th >Test result</th>
 				<th >Function</th>
                 </tr>
               </thead>
@@ -279,7 +280,8 @@
 				<th>medicaltestresult</th>
 				<th>patientid</th>
 				<th>doctorid</th>
-				<th >Function</th>
+				<th>Test result</th>
+				<th>Function</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -292,7 +294,7 @@
 					<td>${treatment.medicaltestresult}</td>
 					<td>${treatment.patient.patientid}</td>
 					<td>${treatment.user.userid}</td>
-					<td ><a href='<c:url value="/download/${user.userid}"></c:url>'>Test result</a></td>
+					<td ><a href='<c:url value="/download/${treatment.patient.patientid}"></c:url>'>Test result</a></td>
 					<td ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myUpdate" id="edit">Update</button>
                   <button type="button" class="btn btn-info btn-lg" style="background-color:red; color:white"><a style="color:white" href="<c:url value='/deleteTreatment?treamentid=${treatment.treatmentid}'></c:url>">Delete</a></button></td>
 				</tr>
@@ -330,7 +332,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="Login">Logout</a>
+            <a class="btn btn-primary" href="login">Logout</a>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ public class DownloadPdf {
 	public static void download(HttpServletResponse response) throws IOException {
         File file = null;
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        file = new File(classLoader.getResource("user.pdf").getFile());
+        file = new File(classLoader.getResource("result.pdf").getFile());
         String mimeType= URLConnection.guessContentTypeFromName(file.getName());
         response.setContentType(mimeType);
         response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() +"\""));

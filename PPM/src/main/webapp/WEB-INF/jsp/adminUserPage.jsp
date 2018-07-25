@@ -59,13 +59,13 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Account">
-          <a class="nav-link" href="Account">
+          <a class="nav-link" href="adminUserPage">
             <i class="fa fa-fw fa-child"></i>
             <span class="nav-link-text">Accounts</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Patient">
-          <a class="nav-link" href="Patient">
+          <a class="nav-link" href="nursepage">
             <i class="fa fa-fw fa-vcard"></i>
             <span class="nav-link-text">Patients</span>
           </a>
@@ -186,11 +186,23 @@
 				</tr>
 				<tr>
 					<td>Role id:</td>
-					<td><form:input path="role.roleid"   id="roleid" name="roleid" required="required"/></td>
+					<td><%-- <form:input path="role.roleid"   id="roleid" name="roleid" required="required"/> --%>
+					<form:select path="role.roleid"   id="roleid" name="roleid" required="required">
+					  <option value="1">doctor</option>
+					  <option value="2">nurse</option>
+ 				      <option value="3">admin</option>
+					</form:select>	
+					</td>
 				</tr>
 				<tr>
 					<td>Sex:</td>
-					<td><form:input path="sex"  id="sex" name="sex" required="required"/></td>
+					<td><%-- <form:input path="sex"  id="sex" name="sex" required="required"/> --%>
+					<form:select path="sex"  id="sex" name="sex" required="required">
+					  <option value="Nam">Nam</option>
+					  <option value="Nu">Nu</option>
+ 				      <option value="Other">Other</option>
+					</form:select>	
+					</td>
 				</tr>
 				<tr>
 					<td>Date of birth:</td>
@@ -202,15 +214,15 @@
 				</tr>
 				<tr>
 					<td>User Name:</td>
-					<td><form:input path="username"  id="username" name="username" require="required"/></td>
+					<td><form:input path="username"  id="username" name="username" require="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
-					<td><form:password path="password"  id="password" name="password" require="required"/></td>
+					<td><form:password path="password"  id="password" name="password" require="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="Register" /></td>
+					<td colspan="2" align="center"><input type="submit" id="#btnADD"
+						value="Update" /></td>
 				</tr>
 			</table>
 			</form:form> 
@@ -238,7 +250,6 @@
 				<th >Roleid</th>
 				<th >Username</th>
 				<th >Password</th>
-				<th >Test result</th>
 				<th >Function</th>
                 </tr>
               </thead>
@@ -253,7 +264,6 @@
 				<th >Roleid</th>
 				<th >Username</th>
 				<th >Password</th>
-				<th >Test result</th>
 				<th >Function</th>
                 </tr>
               </tfoot>
@@ -269,7 +279,6 @@
 					<td >${user.role.roleid}</td>
 					<td >${user.username}</td>
 					<td >${user.password}</td>
-					<td ><a href='<c:url value="/download/${user.userid}"></c:url>'>Test result</a></td>
 					<td ><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myUpdate" id="edit">Update</button>
                   <button type="button" class="btn btn-info btn-lg" style="background-color:red; color:white"><a style="color:white" href="<c:url value='/deleteUser?userid=${user.userid}'></c:url>">Delete</a></button></td>
 				</tr>
@@ -307,7 +316,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="Login">Logout</a>
+            <a class="btn btn-primary" href="login">Logout</a>
           </div>
         </div>
       </div>
