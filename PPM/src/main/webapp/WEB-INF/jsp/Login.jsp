@@ -38,7 +38,7 @@
           <div>
           	<p style="color:red;">${message}</p>
           </div>
-          <button class="btn btn-primary btn-block" type="submit"><a href="Account" style="color:white;">Login</a></button>
+          <button class="btn btn-primary btn-block" type="submit">Login</button>
  
         </form:form>
         <div class="text-center">

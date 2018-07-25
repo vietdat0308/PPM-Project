@@ -181,8 +181,8 @@
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myUpdate" 
           id="myBtn" onclick="myFunction()">
           Add New Treatment</button>
-          <button type="button" class="btn btn-info btn-lg">
-          PrintPDF</button>
+          <button type="button" class="btn btn-info btn-lg">PrintPDF</a>
+          </button>
           <!-- Trigger the modal with a button -->
 
  
